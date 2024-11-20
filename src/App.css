@@ -2,3 +2,15 @@
   max-width: 520px;
   margin: 0 auto;
 }
+
+header {
+  display: flex;
+  padding: 12px;
+}
+
+#musicSite {
+  width: 100%;
+  text-align: center;
+  border-radius: 12px;
+  font-size: 1.12em;
+}
