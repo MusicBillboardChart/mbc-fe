@@ -3,7 +3,11 @@ import Lp from "../../assets/LP.svg";
 import { siteInfoStore } from "../../store/store";
 import { fetchData } from "../../api/index";
 
-const Header = () => {
+interface HeaderProps {
+  setSelectedSites: (site: string) => void;
+}
+
+const Header = ({setSelectedSites}:HeaderProps) => {
   const sites = [
     { value: "", label: "음원 차트를 골라주세요!" },
     { value: "youtube-music", label: "유튜브 뮤직" },
@@ -18,12 +22,13 @@ const Header = () => {
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedSite(event.target.value);
     fetchData();
+    setSelectedSites(event.target.value)
   };
 
   return (
     <header>
       <img src={Lp} alt="Logo" className="logo" />
-      <select value={selectedSite} onChange={handleChange}>
+      <select value={selectedSite} onChange={handleChange} id="musicSite">
         {sites.map((site, idx) => (
           <option key={idx} value={site.value}>
             {site.label}
