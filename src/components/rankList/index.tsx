@@ -28,12 +28,12 @@ const RankList = ({siteNames}:siteInfo) => {
   }
 
   return (
-    <section>
-      <ol>
+    <section className="musicChartSection">
+      <ul>
       {Object.entries(musicChart).map(([value,key]) => (
-        <li key={value}>{JSON.stringify(key)}</li>
+        <li key={value}>{parseInt(value)+1}. {JSON.stringify(key).split(`"`)}</li>
         ))}
-      </ol>
+      </ul>
     </section>
   );
 };
