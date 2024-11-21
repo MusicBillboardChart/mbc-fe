@@ -14,3 +14,25 @@ header {
   border-radius: 12px;
   font-size: 1.12em;
 }
+
+ul,li {
+  list-style: none;
+}
+
+.musicChartSection {
+  padding: 10px;
+}
+
+.musicChartSection > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.musicChartSection > ul > li {
+  padding: 0.8rem;
+  font-size: large;
+  font-family: "SUIT-SemiBold";
+  box-shadow: 1px 2px 5px 1px #0000006d;
+  border-radius: 12px;
+}
