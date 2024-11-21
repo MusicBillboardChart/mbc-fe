@@ -3,9 +3,9 @@ import { siteInfoStore } from "../store/store";
 
 export const fetchData = async () => {
   const selectedSite = siteInfoStore.getState().selectedSite;
-  const server_url = process.env.REACT_APP_API_KEY
-  const url: string = `${server_url}/${selectedSite}`;
-
+  const url: string = `https://mbc-server.onrender.com/${selectedSite}`;
+  console.log(url);
+  
   try {
     const response = await axios.get(url, {
       headers: {
